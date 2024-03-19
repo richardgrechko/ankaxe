@@ -70,7 +70,7 @@ module.exports = ({ Config }) => {
         TURRETS: [
           {
             POSITION: [10, 0, 0, 0, 360, 1],
-            TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"], INDEPENDENT: true, }]
+            TYPE: ["ankaxe_circle"]
           }
         ],
     };
@@ -80,7 +80,7 @@ module.exports = ({ Config }) => {
         TURRETS: [
           {
             POSITION: [10, 0, 0, 0, 360, 1],
-            TYPE: ["ankaxe_circle"]
+            TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"], INDEPENDENT: true, }]
           }
         ],
     };
