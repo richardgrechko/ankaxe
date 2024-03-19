@@ -5,66 +5,66 @@ module.exports = ({ Config }) => {
   Config.SPAWN_CLASS = ["ankaxe_node", "ankaxe_base", "ankaxe_model"]
   //Ankaxe4
   
-    Class.ankaxe_circle = {
+    ankaxe_circle = {
         PARENT: ["genericTank"],
         LABEL: "Circle",
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_triangle = {
+    ankaxe_triangle = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 3,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_flipped_triangle = {
+    ankaxe_flipped_triangle = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 3.5,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_square = {
+    ankaxe_square = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 4,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_pentagon = {
+    ankaxe_pentagon = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 5,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_flipped_pentagon = {
+    ankaxe_flipped_pentagon = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 5.5,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_hexagon = {
+   ankaxe_hexagon = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 6,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_heptagon = {
+    ankaxe_heptagon = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 7,
         MIRROR_MASTER_ANGLE: true
     };
-    Class.ankaxe_flipped_heptagon = {
+    ankaxe_flipped_heptagon = {
         PARENT: ["genericTank"],
         LABEL: "",
         SHAPE: 7.5,
         MIRROR_MASTER_ANGLE: true
     };
   // Weapons
-    Class.ankaxe_node = {
+    ankaxe_node = {
         PARENT: ["genericTank"],
         LABEL: "Node"
     };
   // Bodies
-    Class.ankaxe_base = {
+    ankaxe_base = {
         PARENT: ["genericTank"],
         LABEL: "Base",
         TURRETS: [
@@ -75,11 +75,11 @@ module.exports = ({ Config }) => {
         ],
     };
   // Models
-    Class.ankaxe_model = {
+    ankaxe_model = {
         PARENT: ["genericTank"],
         LABEL: "Model",
     };
-    Class.ankaxe_automaton = {
+    ankaxe_automaton = {
         PARENT: ["genericTank"],
         LABEL: "Automaton",
         TURRETS: [
@@ -93,7 +93,7 @@ module.exports = ({ Config }) => {
           },
         ],
     };
-    Class.ankaxe_node.UPGRADES_TIER_0 = [];
-    Class.ankaxe_base.UPGRADES_TIER_0 = [];
-    Class.ankaxe_model.UPGRADES_TIER_0 = [Class.ankaxe_automaton];
+    ankaxe_node.UPGRADES_TIER_0 = [];
+    ankaxe_base.UPGRADES_TIER_0 = [];
+    ankaxe_model.UPGRADES_TIER_0 = ["ankaxe_automaton"];
 };
