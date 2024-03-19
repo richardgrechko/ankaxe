@@ -94,16 +94,16 @@ module.exports = ({ Config }) => {
         LABEL: "Automaton",
         TURRETS: [
           {
-            POSITION: [8.5, 8, 0, 90, 190, 0],
+            POSITION: [8.5, 0, 8, 0, 190, 0],
             TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"] }]
           },
           {
-            POSITION: [8.5, 8, 0, 270, 190, 0],
+            POSITION: [8.5, 0, -8, 0, 190, 0],
             TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"] }]
           },
         ],
     };
     Class.ankaxe_node.UPGRADES_TIER_0 = [];
-    Class.ankaxe_base.UPGRADES_TIER_0 = [];
+    Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry"];
     Class.ankaxe_model.UPGRADES_TIER_0 = ["ankaxe_automaton"];
 };
