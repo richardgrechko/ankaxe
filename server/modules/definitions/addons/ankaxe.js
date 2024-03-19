@@ -1,7 +1,7 @@
 const { combineStats, addAura, makeAuto } = require('../facilitators.js');
 const { gunCalcNames, smshskl, base } = require('../constants.js');
 const g = require('../gunvals.js');
-module.exports = {
+module.exports = ({ Class, config }) => {
   // Weapons
     exports.node = {
         PARENT: ["genericTank"],
