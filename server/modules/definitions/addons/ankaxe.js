@@ -1,8 +1,9 @@
 const { combineStats, addAura, makeAuto } = require('../facilitators.js');
 const { gunCalcNames, smshskl, base } = require('../constants.js');
 const g = require('../gunvals.js');
-module.exports = ({ Class, Config }) => {
+module.exports = ({ Config }) => {
   Config.SPAWN_CLASS = ["ankaxe_node", "ankaxe_base", "ankaxe_model"]
+  //Ankaxe4
   
     Class.ankaxe_circle = {
         PARENT: ["genericTank"],
