@@ -67,7 +67,7 @@ module.exports = ({ Config }) => {
         PARENT: ["genericTank"],
         LABEL: "Mono",
         GUNS: [
-          {
+            {
               POSITION: [18, 8, 1, 0, 0, 0, 0],
               PROPERTIES: {
                   SHOOT_SETTINGS: combineStats([g.basic]),
@@ -75,6 +75,26 @@ module.exports = ({ Config }) => {
                    COLOR: "grey"
                 }
             }
+        ],
+    };
+    Class.ankaxe_caltrop = {
+        PARENT: ["genericTank"],
+        LABEL: "Caltrop",
+        GUNS: [
+            {
+              POSITION: [14, 6, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [3, 6, 1.5, 14, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.trap, g.morereload, g.halfdamage]),
+                   TYPE: "trap",
+                   COLOR: "grey"
+                }
+            },
         ],
     };
   // Bodies
@@ -117,7 +137,7 @@ module.exports = ({ Config }) => {
           },
         ],
     };
-    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono"];
+    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_caltrop"];
     Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry"];
     Class.ankaxe_model.UPGRADES_TIER_0 = ["ankaxe_automaton"];
 };
