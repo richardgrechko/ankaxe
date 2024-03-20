@@ -63,6 +63,10 @@ module.exports = ({ Config }) => {
         PARENT: ["genericTank"],
         LABEL: "Node"
     };
+    Class.ankaxe_mono = {
+        PARENT: ["genericTank"],
+        LABEL: "Mono",
+    };
   // Bodies
     Class.ankaxe_base = {
         PARENT: ["genericTank"],
