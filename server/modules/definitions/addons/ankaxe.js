@@ -117,7 +117,7 @@ module.exports = ({ Config }) => {
           },
         ],
     };
-    Class.ankaxe_node.UPGRADES_TIER_0 = [];
+    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono"];
     Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry"];
     Class.ankaxe_model.UPGRADES_TIER_0 = ["ankaxe_automaton"];
 };
