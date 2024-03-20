@@ -66,6 +66,16 @@ module.exports = ({ Config }) => {
     Class.ankaxe_mono = {
         PARENT: ["genericTank"],
         LABEL: "Mono",
+        GUNS: [
+          {
+              POSITION: [18, 8, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+        ],
     };
   // Bodies
     Class.ankaxe_base = {
