@@ -3,7 +3,7 @@ module.exports = {
 
     // Game server domain.
     // If 'localhost:NUMBER', the port must equal the port setting.
-    host: "ankaxe.github.io",
+    host: "richardgrechko.github.io/ankaxe",
 
     // Which port to run the web server on.
     port: 26301,
