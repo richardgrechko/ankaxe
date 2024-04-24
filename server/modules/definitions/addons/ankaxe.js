@@ -97,6 +97,20 @@ module.exports = ({ Config }) => {
             },
         ],
     };
+    Class.ankaxe_watcher = {
+        PARENT: ["genericTank"],
+        LABEL: "Watcher",
+        GUNS: [
+            {
+              POSITION: [8, 8, 1.5, 5, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.drone, g.morereload, g.halfdamage]),
+                   TYPE: "drone",
+                   COLOR: "grey"
+                }
+            },
+        ],
+    };
   // Bodies
     Class.ankaxe_base = {
         PARENT: ["genericTank"],
@@ -118,6 +132,32 @@ module.exports = ({ Config }) => {
           }
         ],
     };
-    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_caltrop"];
-    Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry"];
+    Class.ankaxe_whirlwind = {
+        PARENT: ["genericTank"],
+        LABEL: "Whirlwind",
+        AI: {
+            SPEED: 2
+        },
+        GUNS: (() => {
+          let output = [];
+          for (let i = 0; i < 3; i++) output.push(
+            {
+              POSITION: { LENGTH: 0.1, WIDTH: 7, DELAY: 0 },
+              PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {reload: 2}]),
+                TYPE: ["satellite", { ANGLE: i*120 }]
+              }
+            },
+          );
+          return output;
+        })(),
+        TURRETS: [
+          {
+            POSITION: [10, 0, 0, 0, 360, 1],
+            TYPE: ["ankaxe_triangle", { CONTROLLERS: [["spin", {speed: 0.1}]] }]
+          }
+        ],
+    };
+    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_caltrop", "ankaxe_watcher"];
+    Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry", "ankaxe_whirlwind"];
 };
