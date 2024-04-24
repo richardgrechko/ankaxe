@@ -2,7 +2,7 @@ const { combineStats, addAura, makeAuto } = require('../facilitators.js');
 const { gunCalcNames, smshskl, base } = require('../constants.js');
 const g = require('../gunvals.js');
 module.exports = ({ Config }) => {
-  Config.SPAWN_CLASS = ["ankaxe_node", "ankaxe_base", "ankaxe_model"]
+  Config.SPAWN_CLASS = ["ankaxe_node", "ankaxe_base"]
   //Ankaxe4
   
     Class.ankaxe_circle = {
@@ -118,26 +118,6 @@ module.exports = ({ Config }) => {
           }
         ],
     };
-  // Models
-    Class.ankaxe_model = {
-        PARENT: ["genericTank"],
-        LABEL: "Model",
-    };
-    Class.ankaxe_automaton = {
-        PARENT: ["genericTank"],
-        LABEL: "Automaton",
-        TURRETS: [
-          {
-            POSITION: [8.5, 0, 8, 0, 190, 0],
-            TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"] }]
-          },
-          {
-            POSITION: [8.5, 0, -8, 0, 190, 0],
-            TYPE: ["autoTurret", { CONTROLLERS: ["nearestDifferentMaster"] }]
-          },
-        ],
-    };
     Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_caltrop"];
     Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry"];
-    Class.ankaxe_model.UPGRADES_TIER_0 = ["ankaxe_automaton"];
 };
