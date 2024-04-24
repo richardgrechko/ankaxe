@@ -200,8 +200,12 @@ module.exports = ({ Config }) => {
                 TURRETS: [
                     {
                        POSITION: [200/22, 8, 0, 0, 210, 0],
-                       TYPE: exports.autoTurret
-                    }
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 180, 210, 0],
+                       TYPE: "autoTurret"
+                    },
                 ],
               }
             }
@@ -455,6 +459,120 @@ Class.ankaxe_focal = {
             }
     ],
 }
+  // Auto 2 upgrades
+    Class.ankaxe_auto3 = {
+        PARENT: ["genericTank"],
+        LABEL: "Auto 3",
+        TURRETS: [
+            {
+              POSITION: [22, 0, 0, 0, 360, 0],
+              TYPE: Class.ankaxe_auto3Body = {
+                PARENT: ["genericTank"],
+                LABEL: "",
+                FACING_TYPE: "autospin",
+                TURRETS: [
+                    {
+                       POSITION: [200/22, 8, 0, 0, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 120, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 240, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                ],
+              }
+            }
+        ],
+    };
+  // Auto 3 upgrades
+    Class.ankaxe_auto5 = {
+        PARENT: ["genericTank"],
+        LABEL: "Auto 5",
+        TURRETS: [
+            {
+              POSITION: [22, 0, 0, 0, 360, 0],
+              TYPE: Class.ankaxe_auto5Body = {
+                PARENT: ["genericTank"],
+                LABEL: "",
+                FACING_TYPE: "autospin",
+                TURRETS: [
+                    {
+                       POSITION: [200/22, 8, 0, 0, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 72, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 144, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 216, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 288, 210, 0],
+                       TYPE: "autoTurret"
+                    },
+                ],
+              }
+            }
+        ],
+    };
+    Class.ankaxe_bulletHell = {
+        PARENT: ["genericTank"],
+        LABEL: "Bullet Hell",
+        TURRETS: [
+            {
+              POSITION: [22, 0, 0, 0, 360, 0],
+              TYPE: Class.ankaxe_bulletHellBody = {
+                PARENT: ["genericTank"],
+                LABEL: "",
+                FACING_TYPE: "autospin",
+                TURRETS: [
+                    {
+                       POSITION: [6, 8, 0, 0, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 45, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 90, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 135, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 180, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 225, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 270, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                    {
+                       POSITION: [6, 8, 0, 315, 120, 0],
+                       TYPE: "autoTurret"
+                    },
+                ],
+              }
+            }
+        ],
+    };
   // Pelling upgrades
     Class.ankaxe_pelleter = {
         PARENT: ["genericTank"],
