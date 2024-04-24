@@ -525,6 +525,38 @@ Class.ankaxe_focal = {
             }
         ],
     };
+    Class.ankaxe_auto4 = {
+        PARENT: ["genericTank"],
+        LABEL: "Auto 4",
+        TURRETS: [
+            {
+              POSITION: [22, 0, 0, 0, 360, 0],
+              TYPE: Class.ankaxe_auto4Body = {
+                PARENT: ["genericTank"],
+                LABEL: "",
+                FACING_TYPE: "autospin",
+                TURRETS: [
+                    {
+                       POSITION: [200/22, 8, 0, 0, 210, 0],
+                       TYPE: "auto4gun"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 90, 210, 0],
+                       TYPE: "auto4gun"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 180, 210, 0],
+                       TYPE: "auto4gun"
+                    },
+                    {
+                       POSITION: [200/22, 8, 0, 270, 210, 0],
+                       TYPE: "auto4gun"
+                    },
+                ],
+              }
+            }
+        ],
+    };
     Class.ankaxe_bulletHell = {
         PARENT: ["genericTank"],
         LABEL: "Bullet Hell",
