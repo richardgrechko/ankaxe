@@ -143,6 +143,36 @@ module.exports = ({ Config }) => {
             }
         ],
     };
+    Class.ankaxe_flank = {
+        PARENT: ["genericTank"],
+        LABEL: "Flank",
+        GUNS: [
+            {
+              POSITION: [18, 8, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [18, 8, 1, 0, 0, 120, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [18, 8, 1, 0, 0, 240, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+        ],
+    };
   // Pelling upgrades
     Class.ankaxe_pelleter = {
         PARENT: ["genericTank"],
