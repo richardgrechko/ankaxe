@@ -173,6 +173,351 @@ module.exports = ({ Config }) => {
             },
         ],
     };
+    Class.ankaxe_machineGun = {
+        PARENT: ["genericTank"],
+        LABEL: "Machine Gun",
+        GUNS: [
+            {
+              POSITION: [12, 8, 1.4, 8, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+        ],
+    };
+// Machine Gun upgrades
+Class.ankaxe_minigun = {
+    PARENT: "genericTank",
+    LABEL: "Minigun",
+    DANGER: 6,
+    BODY: {
+        FOV: base.FOV * 1.2
+    },
+    GUNS: [
+        {
+            POSITION: [21, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+Class.ankaxe_gunner = {
+    PARENT: "genericTank",
+    LABEL: "Gunner",
+    DANGER: 6,
+    GUNS: [
+        {
+            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+Class.ankaxe_sprinkler = {
+    PARENT: "genericTank",
+    LABEL: "Sprinkler",
+    DANGER: 6,
+    GUNS: [
+        {
+            POSITION: [23, 5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.lowPower, g.pelleter, { recoil: 1.15 }]),
+                TYPE: "bullet"
+            }
+        },
+            {
+              POSITION: [12, 8, 1.4, 8, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+    ]
+}
+
+// Minigun upgrades
+Class.ankaxe_streamliner = {
+    PARENT: "genericTank",
+    LABEL: "Streamliner",
+    DANGER: 7,
+    BODY: {
+        FOV: 1.3,
+    },
+    GUNS: [
+        {
+            POSITION: [25, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [23, 8, 1, 0, 0, 0, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [21, 8, 1, 0, 0, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.ankaxe_barricade = {
+    PARENT: "genericTank",
+    DANGER: 7,
+    LABEL: "Barricade",
+    STAT_NAMES: statnames.trap,
+    BODY: {
+        FOV: 1.15,
+    },
+    GUNS: [
+        {
+            POSITION: [24, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [4, 8, 1.3, 22, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.minigun, { range: 0.5 }]),
+                TYPE: "trap",
+                STAT_CALCULATOR: gunCalcNames.trap,
+            },
+        },
+        {
+            POSITION: [4, 8, 1.3, 18, 0, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.minigun, { range: 0.5 }]),
+                TYPE: "trap",
+                STAT_CALCULATOR: gunCalcNames.trap,
+            },
+        },
+        {
+            POSITION: [4, 8, 1.3, 14, 0, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.minigun, { range: 0.5 }]),
+                TYPE: "trap",
+                STAT_CALCULATOR: gunCalcNames.trap,
+            },
+        },
+    ],
+}
+
+// Gunner upgrades
+Class.ankaxe_nailgun = {
+    PARENT: "genericTank",
+    LABEL: "Nailgun",
+    DANGER: 7,
+    BODY: {
+        FOV: base.FOV * 1.1,
+        SPEED: base.SPEED * 0.9,
+    },
+    GUNS: [
+        {
+            POSITION: [19, 2, 1, 0, -2.5, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [19, 2, 1, 0, 2.5, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [20, 2, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [5.5, 7, -1.8, 6.5, 0, 0, 0],
+        },
+    ],
+}
+Class.ankaxe_machineGunner = {
+    PARENT: "genericTank",
+    LABEL: "Machine Gunner",
+    DANGER: 7,
+    BODY: {
+        SPEED: 0.9 * base.SPEED,
+    },
+    GUNS: [
+        {
+            POSITION: [14, 3, 4, -3, 5, 0, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, -3, -5, 0, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, 0, 2.5, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, 0, -2.5, 0, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, 3, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+
+// Sprinkler upgrades
+Class.ankaxe_sprayer = {
+    PARENT: "genericTank",
+    LABEL: "Sprayer",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [25, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.lowPower, g.pelleter, { recoil: 1.15 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [23, 6, 1, 0, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.lowPower, g.pelleter, { recoil: 1.15 }]),
+                TYPE: "bullet"
+            }
+        },
+            {
+              POSITION: [12, 8, 1.4, 8, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+    ],
+}
+Class.ankaxe_atomizer = {
+    PARENT: "genericTank",
+    LABEL: "Atomizer",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [5, 5, 1.3, 18.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.machineGun, { recoil: 1.15 }, g.atomizer]),
+                TYPE: "bullet",
+            },
+        },
+            {
+              POSITION: [12, 8, 1.4, 8, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+    ],
+}
+Class.ankaxe_focal = {
+    PARENT: "genericTank",
+    LABEL: "Focal",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [25, 5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.machineGun, { recoil: 1.15 }]),
+                TYPE: "bullet",
+            },
+        },
+            {
+              POSITION: [14, 8, 1.4, 8, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+    ],
+}
   // Pelling upgrades
     Class.ankaxe_pelleter = {
         PARENT: ["genericTank"],
@@ -247,7 +592,8 @@ module.exports = ({ Config }) => {
         ],
     };
     Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_pelling", "ankaxe_caltrop", "ankaxe_watcher"];
-      Class.ankaxe_mono.UPGRADES_TIER_0 = ["ankaxe_duo"];
-      Class.ankaxe_pelling.UPGRADES_TIER_0 = ["ankaxe_pelleter"];
+      Class.ankaxe_mono.UPGRADES_TIER_1 = ["ankaxe_duo", "ankaxe_machineGun"];
+        Class.ankaxe_machineGun.UPGRADES_TIER_2 = ["ankaxe_minigun", "ankaxe_gunner", "ankaxe_sprinkler"];
+      Class.ankaxe_pelling.UPGRADES_TIER_1 = ["ankaxe_pelleter"];
     Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry", "ankaxe_whirlwind"];
 };
