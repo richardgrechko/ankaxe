@@ -77,6 +77,23 @@ module.exports = ({ Config }) => {
             }
         ],
     };
+    Class.ankaxe_pelling = {
+        PARENT: ["genericTank"],
+        LABEL: "Pelling",
+        GUNS: [
+            {
+              POSITION: [17, 3, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.pelleter]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [4.5, 9, -1.4, 8.5, 0, 0, 0],
+            },
+        ],
+    };
     Class.ankaxe_caltrop = {
         PARENT: ["genericTank"],
         LABEL: "Caltrop",
@@ -108,6 +125,47 @@ module.exports = ({ Config }) => {
                    TYPE: "drone",
                    COLOR: "grey"
                 }
+            },
+        ],
+    };
+  // Mono upgrades
+    Class.ankaxe_duo = {
+        PARENT: ["genericTank"],
+        LABEL: "Duo",
+        GUNS: [
+            {
+              POSITION: [18, 8, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            }
+        ],
+    };
+  // Pelling upgrades
+    Class.ankaxe_pelleter = {
+        PARENT: ["genericTank"],
+        LABEL: "Pelleter",
+        GUNS: [
+            {
+              POSITION: [17, 3, 1, 0, 2.5, 0, 0],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.pelleter]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [17, 3, 1, 0, -2.5, 0, 0.5],
+              PROPERTIES: {
+                  SHOOT_SETTINGS: combineStats([g.basic, g.pelleter]),
+                   TYPE: "bullet",
+                   COLOR: "grey"
+                }
+            },
+            {
+              POSITION: [4.5, 9, -1.4, 8.5, 0, 0, 0],
             },
         ],
     };
@@ -158,6 +216,8 @@ module.exports = ({ Config }) => {
           }
         ],
     };
-    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_caltrop", "ankaxe_watcher"];
+    Class.ankaxe_node.UPGRADES_TIER_0 = ["ankaxe_mono", "ankaxe_pelling", "ankaxe_caltrop", "ankaxe_watcher"];
+      Class.ankaxe_mono.UPGRADES_TIER_0 = ["ankaxe_duo"];
+      Class.ankaxe_pelling.UPGRADES_TIER_0 = ["ankaxe_pelleter"];
     Class.ankaxe_base.UPGRADES_TIER_0 = ["ankaxe_sentry", "ankaxe_whirlwind"];
 };
