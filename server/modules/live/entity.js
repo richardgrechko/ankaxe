@@ -1697,7 +1697,7 @@ class Entity extends EventEmitter {
         // Initalize.
         this.activation.update();
         this.facing = this.bond.facing + this.bound.angle;
-        this.facingType = ["bound"];
+        if (this.facingType = "toTarget") this.facingType = ["bound"];
         this.motionType = ["bound"];
         this.move();
     }
