@@ -187,6 +187,26 @@ module.exports = ({ Config }) => {
             }
         ],
     };
+    Class.ankaxe_auto2 = {
+        PARENT: ["genericTank"],
+        LABEL: "Auto 2",
+        TURRETS: [
+            {
+              POSITION: [22, 0, 0, 0, 360, 0],
+              TYPE: Class.ankaxe_auto2Body = {
+                PARENT: ["genericTank"],
+                LABEL: "",
+                FACING_TYPE: "autospin",
+                TURRETS: [
+                    {
+                       POSITION: [200/22, 8, 0, 0, 210, 0],
+                       TYPE: exports.autoTurret
+                    }
+                ],
+              }
+            }
+        ],
+    };
 // Machine Gun upgrades
 Class.ankaxe_minigun = {
     PARENT: "genericTank",
@@ -360,51 +380,6 @@ Class.ankaxe_nailgun = {
         },
     ],
 }
-Class.ankaxe_machineGunner = {
-    PARENT: "genericTank",
-    LABEL: "Machine Gunner",
-    DANGER: 7,
-    BODY: {
-        SPEED: 0.9 * base.SPEED,
-    },
-    GUNS: [
-        {
-            POSITION: [14, 3, 4, -3, 5, 0, 0.6],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
-                TYPE: "bullet",
-            },
-        },
-        {
-            POSITION: [14, 3, 4, -3, -5, 0, 0.8],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
-                TYPE: "bullet",
-            },
-        },
-        {
-            POSITION: [14, 3, 4, 0, 2.5, 0, 0.4],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
-                TYPE: "bullet",
-            },
-        },
-        {
-            POSITION: [14, 3, 4, 0, -2.5, 0, 0.2],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
-                TYPE: "bullet",
-            },
-        },
-        {
-            POSITION: [14, 3, 4, 3, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-}
 
 // Sprinkler upgrades
 Class.ankaxe_sprayer = {
@@ -535,12 +510,12 @@ Class.ankaxe_focal = {
         },
         GUNS: (() => {
           let output = [];
-          for (let i = 0; i < 3; i++) output.push(
+          for (let i = 0; i < 4; i++) output.push(
             {
               POSITION: { LENGTH: 0.1, WIDTH: 7, DELAY: 0 },
               PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, {reload: 2}]),
-                TYPE: ["satellite", { ANGLE: i*120 }]
+                TYPE: ["satellite", { ANGLE: i*90 }]
               }
             },
           );
@@ -549,7 +524,7 @@ Class.ankaxe_focal = {
         TURRETS: [
           {
             POSITION: [10, 0, 0, 0, 360, 1],
-            TYPE: ["ankaxe_triangle", { CONTROLLERS: [["spin", {speed: 0.1}]] }]
+            TYPE: ["ankaxe_square", { CONTROLLERS: [["spin", {speed: 0.1}]] }]
           }
         ],
     };
